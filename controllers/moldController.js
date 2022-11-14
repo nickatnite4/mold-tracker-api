@@ -8,7 +8,7 @@ exports.create = async function (req, res) {
   try {
     let mold = await Mold.create(req.body)
     await mold.save()
-    res.json('saved')
+    res.status(200).json('saved')
   } catch (e) {
     res.json(e.message)
   }
